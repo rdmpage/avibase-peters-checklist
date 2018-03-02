@@ -1,0 +1,29 @@
+Dear Dennis,
+
+I thought I should get in touch regarding a project I'm working on that is relevant to Avibase and builds on the work you've done on Peter's Checklist.
+
+For the last few years I'm been obsessed with mapping taxonomic names to their original description, or more precisely, a digital version of that description, e.g. in BHL, BioStor (my attempt to extract articles from BHL), digital archives, or publisher content (using DOIs). BioNames http://bionames.org is the latest attempt at this, which essentially builds on Zoological Record and ION http://www.organismnames.com.
+
+One limitation of ION is that the level of coverage and bibliographic detail drops off if you go back in time further than, say, the middle of the last century. As a consequence, it does a rather uneven job of covering names for many vertebrates that were described prior to, WW2.
+
+Hence I've started looking at other sources of data, such as Mammal Species of the World, and Peter's Checklist, for which you've create a summary spreadsheet. A significant challenge in handling these lists is that the literature is cited in the form of cryptic "microcitations" rather than articles. I face the same issue with plant names (which I'm also working on).
+
+I've started to build some tools to handle microcitations, and am slowly working through Peter's Checklist (I ended up doing this because I foolishly wanted to map all the names in this EOL collection to their original descriptions: http://eol.org/collections/116394 )
+
+To cut a long story short, I've put up progress so far here: 
+
+This is a quick and dirty web site that isn't really intended for public consumption, it simply lets me get a sense of my progress through the dataset. There are a few little features that are fun. If you see a DOI you can click on it to see a summary of the article appear on the right. If you click on a PageID (second column) you will see the corresponding page in the Checklist, which can be handy to check things. Likewise, if there's a mapping to a page in BHL, clicking on the page number will show you that page.
+
+Search is crude, just type in a genus name to look at taxa. If you click on a journal name you will see data on articles in that journal. As I say, it's really just a tool to help me browse through the data.
+
+I've done some mapping, here are a few examples:
+
+The process is largely automated, so there will be errors (both in parsing the Checklist database and in mapping to articles).
+
+Anyway, if this is useful let me know. As you'll knwo as well as anyone, this sort of thing can get tedious in the extreme, so I'll work on it in fits and starts, and then try and integrate the results into BioNames.
+
+If the mapping gets anywhere near complete, it might be useful to package it up in a useful way. Ideally it would be great if this sort of information made its way into GBIF. One of my (many) pet peeves with GBIF is that it has so limited connection to  actual evidence. Taxonomic names are given with no way for the user to drill down to the evidence, or cite the original taxonomic literature. Furthermore, one we have links to the literature, we can do all sorts of fun text mining looking for localities, specimens, synonyms, etc.
+
+Regards
+
+Rod
