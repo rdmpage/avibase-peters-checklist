@@ -2,6 +2,8 @@
 
 // Taxon name data browser
 
+error_reporting(E_ALL ^ E_DEPRECATED);
+
 require_once(dirname(__FILE__) . '/config.inc.php');
 require_once(dirname(__FILE__) . '/adodb5/adodb.inc.php');
 
@@ -206,7 +208,7 @@ function display_query($sql, $title = "Results")
 		$identifiers = array('issn', 'doi', 'jstor', 'biostor', 'bhl', 'cinii', 'url', 'pdf', 'handle');
 		foreach ($identifiers as $i)
 		{
-			if ($result->fields[$i] != '')
+			if (isset($result->fields[$i]))
 			{
 				$record->{$i} = $result->fields[$i];
 			}
@@ -348,10 +350,7 @@ function display_query($sql, $title = "Results")
 			echo ' style="background-color:#fff;"';
 			$odd = true;
 		}
-		
-		
-		
-		
+			
 		echo '>';
 		echo '<td>' . '<span style="color:rgb(128,128,128);">' . $sp->id . '</span>' . '</td>';
 		
@@ -359,14 +358,22 @@ function display_query($sql, $title = "Results")
 		echo '<td>';
 		if (isset($sp->pageid))
 		{
-			echo '<span onclick="show_bhl(\'' . $sp->pageid . '\',\'' . $sp->basionym . '\');">';		
-			echo $sp->pageid;
-			echo '</span>';
+			if (isset($sp->basionym))
+			{
+				echo '<span onclick="show_bhl(\'' . $sp->pageid . '\',\'' . $sp->basionym . '\');">';		
+				echo $sp->pageid;
+				echo '</span>';			
+			}
+			else
+			{
+				echo '<span onclick="show_bhl(\'' . $sp->pageid . '\',\'\');">';		
+				echo $sp->pageid;
+				echo '</span>';
+			}
 		}
 		echo '</td>';
 
-		
-		
+				
 		echo '<td>' . $sp->html . '</td>';
 		
 		if (isset($sp->basionym))

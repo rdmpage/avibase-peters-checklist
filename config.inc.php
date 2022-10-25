@@ -20,7 +20,7 @@ $config['site_name']	= 'Avibase';
 
 // Files--------------------------------------------------------------------------------------------
 $config['web_dir']		= dirname(__FILE__) . '/';
-$config['web_root']		= '/~rpage/avibase-peters-checklist/';
+$config['web_root']		= '/avibase-peters-checklist/';
 
 
 // Database-----------------------------------------------------------------------------------------
